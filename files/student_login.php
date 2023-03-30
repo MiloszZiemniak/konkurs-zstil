@@ -9,14 +9,17 @@
     $result1 = mysqli_query($conn,$sql1);
     $row1 = mysqli_fetch_assoc($result1);
     $student_id = $row1["id"];
-
+		
 		$result = mysqli_query($conn, "Select id, test_id, rollno, score, status from students where rollno = '".$student_id."' and password = '".$student_password."' and status = 0 "); 
-
+		//var_dump($student_id);
+		$time =  date("h:i:s");
+		$sql = "INSERT INTO time (rollnum,times) VALUES ('$student_id','$time')";
+		
 		if (mysqli_num_rows($result) > 0){      //Creds arezz
 			//echo "<script>console.log('OK');</script>";
 			while($row = mysqli_fetch_assoc($result)) 
 				$info[] = $row;
-			
+				mysqli_query($conn,$sql);
 			echo 'CREDS_OK';
 		    $_SESSION['student_details'] = json_encode($info); 
 			//header("Location: dashboard.php");
