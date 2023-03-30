@@ -638,7 +638,7 @@ iframe {
 }
 
 .logo img {
-  max-height: 27px;
+  max-height: 50px;
 }
 
 
@@ -982,7 +982,7 @@ li.sale-noti > a {
 }
 
 .logo-mobile img {
-  max-height: 27px;
+  max-height: 40px;
 }
 
 /*[ btn show menu ]
@@ -1105,10 +1105,10 @@ li.sale-noti > a {
   line-height: 2.5;
 }
 
-.side-menu .sub-menu > li {
+/* .side-menu .sub-menu > li {
   padding-left: 12px;
   padding-top: 
-}
+} */
 
 .side-menu .sub-menu a:hover {
   text-decoration: none;
