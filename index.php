@@ -70,12 +70,12 @@
 						</div>
 						<div class="login100-form validate-form">
 						<span class="login100-form-title">
-							Student Login
+							Logowanie 
 						</span>
 						
 						<div class="wrap-input100 validate-input">
 							<input class="input100" id="studentRollNumber" type="text" name="rollNumber"
-								placeholder="Roll Number" required>
+								placeholder="Numer" required>
 							<span class="focus-input100"></span>
 							<span class="symbol-input100">
 								<i class="fa fa-user-circle-o" aria-hidden="true"></i>
@@ -85,7 +85,7 @@
 
 						<div class="wrap-input100 validate-input">
 							<input class="input100" id="studentPassword" type="password" name="password"
-								placeholder="Password" required>
+								placeholder="Hasło" required>
 							<span class="focus-input100"></span>
 							<span class="symbol-input100">
 								<i class="fa fa-lock" aria-hidden="true"></i>
@@ -95,7 +95,7 @@
 
 						<div class="container-login100-form-btn">
 							<button class="login100-form-btn" onclick="login()">
-								Login
+								Zaloguj!
 							</button>
 						</div>
 

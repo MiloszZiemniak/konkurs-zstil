@@ -73,6 +73,13 @@ CREATE TABLE `student_data` (
 	PRIMARY KEY (`id`)
 );
 
+CREATE TABLE `time`(
+	`id` INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+	`rollnum` int,
+	`times` time,
+	`timee` time
+);
+
 ALTER TABLE `tests` ADD CONSTRAINT `tests_fk0` FOREIGN KEY (`teacher_id`) REFERENCES `teachers`(`id`);
 
 ALTER TABLE `tests` ADD CONSTRAINT `tests_fk1` FOREIGN KEY (`status_id`) REFERENCES `status`(`id`);
@@ -93,3 +100,18 @@ ALTER TABLE `score` ADD CONSTRAINT `score_fk1` FOREIGN KEY (`question_id`) REFER
 
 ALTER TABLE `student_data` ADD CONSTRAINT `student_data_fk0` FOREIGN KEY (`class_id`) REFERENCES `classes`(`id`);
 
+--
+-- Dumping data for table `status`
+--
+
+INSERT INTO `status` (`id`, `name`) VALUES
+(1, 'PENDING'),
+(2, 'RUNNING'),
+(3, 'COMPLETED');
+
+--
+-- Dumping data for table `teachers`
+--
+
+INSERT INTO `teachers` (`id`, `email`, `password`) VALUES
+(1, 'admin', '37bd45d638c2d11c49c641d2e9c4f49f406caf3ee282743e0c800aa1ed68e2ee');

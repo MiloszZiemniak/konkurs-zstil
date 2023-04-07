@@ -13,7 +13,7 @@
 		$result = mysqli_query($conn, "Select id, test_id, rollno, score, status from students where rollno = '".$student_id."' and password = '".$student_password."' and status = 0 "); 
 		//var_dump($student_id);
 		$time =  date("h:i:s");
-		$sql = "INSERT INTO time (rollnum,times) VALUES ('$student_id','$time')";
+		$sql = "INSERT INTO time (rollnum,times) VALUES ('$student_roll_number','$time')";
 		
 		if (mysqli_num_rows($result) > 0){      //Creds arezz
 			//echo "<script>console.log('OK');</script>";
