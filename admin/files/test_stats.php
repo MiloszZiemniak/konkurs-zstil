@@ -88,6 +88,7 @@
                             <th>SERIAL NO</th>
                             <th>ROLL NO</th>
                             <th>Score</th>
+                            <th>Time</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -99,12 +100,18 @@
                         $roll_no = $row["rollno"];
                         $sql1 = "select rollno from student_data where id = '$roll_no'";
                         $result1 = mysqli_query($conn,$sql1);
+                        // var_dump($result1);
                         $row1 = mysqli_fetch_assoc($result1);
+                        $sql2 = "select SUBTIME(timee,times) from time where rollnum = '$roll_no'";
+                        $result2 = mysqli_query($conn,$sql2);
+                        // var_dump($result2);
+                        $row2 = mysqli_fetch_assoc($result2);
                         ?>
                         <tr>
                           <td><?= $i; ?></td>
                           <td><?= $row1["rollno"]; ?></td>
                           <td><?= $row["score"]; ?></td>
+                          <td><?= $row2["SUBTIME(timee,times)"] ?></td>
                         </tr>
 
                     <?php    
