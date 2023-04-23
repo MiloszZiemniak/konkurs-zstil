@@ -235,7 +235,7 @@
                 $('#optionD').text('D)   ' + question_data.optionD);
                 question_count++;
             }
-
+          
             function logout(){
                 $.ajax({
                         type: 'POST',

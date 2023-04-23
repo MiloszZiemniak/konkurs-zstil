@@ -100,11 +100,12 @@
                         $roll_no = $row["rollno"];
                         $sql1 = "select rollno from student_data where id = '$roll_no'";
                         $result1 = mysqli_query($conn,$sql1);
-                        // var_dump($result1);
+                        //var_dump($roll_no);
                         $row1 = mysqli_fetch_assoc($result1);
-                        $sql2 = "select SUBTIME(timee,times) from time where rollnum = '$roll_no'";
+                        $rollnum = $row1["rollno"];
+                        $sql2 = "select SUBTIME(timee,times) from time where rollnum = '$rollnum'";
                         $result2 = mysqli_query($conn,$sql2);
-                        // var_dump($result2);
+                        //var_dump($result2);
                         $row2 = mysqli_fetch_assoc($result2);
                         ?>
                         <tr>
