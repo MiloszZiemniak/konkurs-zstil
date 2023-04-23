@@ -8,7 +8,10 @@
         $student_id = $obj->id;
         $student_roll_number = $obj->rollno;
 		$timee =  date("h:i:s");
-        $sql1 = "UPDATE students set status = 1 where id = '$student_id'; UPDATE time set timee = '$timee' where rollnum = '$student_roll_number'";
+        $roll = mysqli_query($conn, "SELECT rollno from student_data where id = '$student_id'");
+        $rollfetch = mysqli_fetch_assoc($roll);
+        $rollnum = $rollfetch["rollno"];
+        $sql1 = "UPDATE students set status = 1 where id = '$student_id'; UPDATE time set timee = '$timee' where rollnum = '$rollnum'";
         $conn->multi_query($sql1);
     }
 
