@@ -17,6 +17,8 @@
 
     if($_POST['message'] == 1)
         echo "Przerwano!";
+    if($_POST['message'] == 2)
+        echo "Koniec czasu!";
     else
         echo "Test zakończony!";   
 

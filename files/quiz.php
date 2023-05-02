@@ -212,6 +212,21 @@
                                 window.location.replace("test_finished.php");
                             }
                         });
+                    }if(result === "TIMEOUT"){
+                        $.ajax({
+                            type: 'POST',
+                            url: 'end_session.php',
+                            data: { 
+                                'message': '2',
+                            },
+                            success: function(msg){
+                                alert(msg);
+                                Cookies.remove('last_question_was_answered');
+                                Cookies.remove('last_question');
+                                Cookies.set('test_submitted_status', msg.toString());
+                                window.location.replace("test_finished.php");
+                            }
+                        });
                     }else{
                         question_data = JSON.parse(result);
                         Cookies.set('last_question', result)

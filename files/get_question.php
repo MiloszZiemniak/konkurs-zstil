@@ -22,6 +22,12 @@
                         getQuestion($conn,true);
                     }       
                 }else{
+                    $timeout = mysqli_query($conn,"SELECT status_id from tests where id = '$test_id'");
+                    $timeoutfetch = mysqli_fetch_assoc($timeout);
+                    if($timeoutfetch["status_id"] == 3){
+                        echo 'TIMEOUT';
+                        exit();
+                    }
                     if($_SESSION['question_counter'] >= sizeof($_SESSION['question_IDS_fetched'])){
                         echo 'QUESTION_SET_FINISHED';
                         exit();
