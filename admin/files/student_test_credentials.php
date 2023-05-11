@@ -16,6 +16,7 @@
 		$pdf->SetFont('Arial','B',12);
 
         $sql = "SELECT id,rollno,password from students where test_id = '$test_id' order by id ASC";
+
         $result = mysqli_query($conn,$sql);
         $i = 1;
         while($row = mysqli_fetch_assoc($result)) {
@@ -119,6 +120,9 @@
                             ROLL NUMBER
                         </th>
                         <th>
+                            Login
+                        </th>
+                        <th>
                             Password
                         </th>
                         </thead>
@@ -130,9 +134,16 @@
                             $i = 1;
                             while($row = mysqli_fetch_assoc($result)) {
                                 $rollno_id = $row["rollno"];
+                                $rollno_sql = "select rollno from student_data where id = '$rollno_id'";
+                                $rollno_result = mysqli_query($conn,$rollno_sql);
+                                $rollno_row = mysqli_fetch_assoc($rollno_result);
+                                $rollno = $rollno_row['rollno'];
                                 $sql1 = "SELECT * from student_data where id = $rollno_id";
                                 $result1 = mysqli_query($conn,$sql1);
                                 $row1 = mysqli_fetch_assoc($result1);
+                                $sql2 = "select login from student_login where rollno = $rollno";
+                                $result2 = mysqli_query($conn,$sql2);
+                                $row2 = mysqli_fetch_assoc($result2);
                             ?>    
                                 <tr>
                                     <td>
@@ -140,7 +151,10 @@
                                     </td>
                                     <td>
                                         <?= $row1["rollno"];?>
-                                    </td>     
+                                    </td>  
+                                    <td>
+                                        <?= $row2["login"];?>  
+                                    </td>
                                     <td>
                                         <?= $row["password"];?>
                                     </td>     

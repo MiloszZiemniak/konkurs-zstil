@@ -87,6 +87,8 @@
                         <tr>
                             <th>SERIAL NO</th>
                             <th>ROLL NO</th>
+                            <th>Imie</th>
+                            <th>Nazwisko</th>
                             <th>Score</th>
                             <th>Time</th>
                         </tr>
@@ -107,10 +109,16 @@
                         $result2 = mysqli_query($conn,$sql2);
                         //var_dump($result2);
                         $row2 = mysqli_fetch_assoc($result2);
+
+                        $sql3 = "select imie,nazwisko from student_login where rollno = '$rollnum'";
+                        $result3 = mysqli_query($conn,$sql3);
+                        $row3 = mysqli_fetch_assoc($result3);
                         ?>
                         <tr>
                           <td><?= $i; ?></td>
                           <td><?= $row1["rollno"]; ?></td>
+                          <td><?= $row3["imie"]; ?></td>
+                          <td><?= $row3["nazwisko"]; ?></td>
                           <td><?= $row["score"]; ?></td>
                           <td><?= $row2["SUBTIME(timee,times)"] ?></td>
                         </tr>

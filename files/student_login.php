@@ -1,8 +1,13 @@
 <?php
-		include '../database/config.php';
+	include '../database/config.php';
     session_start();
-		
-		$student_roll_number = $_POST['rollNumber'];
+	$student_login = $_POST['login'];
+	
+	$sql0 = "select rollno from student_login where login = '$student_login'";
+	$rollnum = mysqli_query($conn,$sql0);
+
+	$roll_fetch = mysqli_fetch_assoc($rollnum);
+	$student_roll_number = $roll_fetch['rollno'];
     $student_password = $_POST['password'];
 
     $sql1 = "select id from student_data where rollno = '$student_roll_number'";

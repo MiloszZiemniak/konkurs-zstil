@@ -8,7 +8,7 @@
 		<meta charset="utf-8">
 	    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 	    <meta name="keywords" content="iamrohitsuthar,Iamrohitsuthar,i am rohit suthar,Hi i am rohit suthar,Hi iamrohitsuthar,i am Rohit Suthar,I am RohitSuthar,mrrohitsuthar,rohit suthar,RohitSuthar,Rohit Suthar,rohitsuthar website,rohit suthar website,programmer,amravati,rohitsuthar,rohit suthar blog,Rohit Suthar,Rohit,Suthar,Rohit Karma,Suthar Rohit,iamrohitsuthar blog,iamrohitsuthar twitter,iamrohitsuthar instagram,iamrohitsuthar stackoverflow,iamrohitsuthar github,iamrohitsuthar linkedin,iamrohitsuthar website">
-	    <title>Quizller</title>
+	    <title>Konkurs</title>
 	    <link rel="icon" type="image/png" href="admin/assets/img/favicon.png">
 		<link rel="stylesheet" type="text/css" href="vendor/bootstrap/css/bootstrap.min.css">
 		<link rel="stylesheet" type="text/css" href="css/header.css">
@@ -66,7 +66,7 @@
 				<div class="container-login100">
 					<div class="wrap-login100">
 						<div class="login100-pic js-tilt" data-tilt>
-							<img src="images/img-01.png" alt="IMG">
+							<img src="images/icons/logo.png" alt="IMG">
 						</div>
 						<div class="login100-form validate-form">
 						<span class="login100-form-title">
@@ -74,8 +74,8 @@
 						</span>
 						
 						<div class="wrap-input100 validate-input">
-							<input class="input100" id="studentRollNumber" type="text" name="rollNumber"
-								placeholder="Numer" required>
+							<input class="input100" id="login" type="text" name="login"
+								placeholder="Login" required>
 							<span class="focus-input100"></span>
 							<span class="symbol-input100">
 								<i class="fa fa-user-circle-o" aria-hidden="true"></i>
@@ -125,7 +125,7 @@
 			function login() {
 				var someFieldIsEmpty = false;
 
-				if (!$('#studentRollNumber').val()) {
+				if (!$('#login').val()) {
 					someFieldIsEmpty = true;
 					$('#empty_roll_number_field').val("Please enter your roll number");
 				}
@@ -139,7 +139,7 @@
 						type: 'POST',
 						url: 'files/student_login.php',
 						data: {
-							'rollNumber': $('#studentRollNumber').val(),
+							'login': $('#login').val(),
 							'password': $('#studentPassword').val(),
 						},
 						success: function (response) {

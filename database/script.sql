@@ -73,6 +73,13 @@ CREATE TABLE `student_data` (
 	PRIMARY KEY (`id`)
 );
 
+CREATE TABLE `student_login`(
+	`rollno` INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+	`login` text,
+	`imie` text,
+	`nazwisko` text
+);
+
 CREATE TABLE `time`(
 	`id` INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
 	`rollnum` int,
@@ -85,6 +92,7 @@ ALTER TABLE `tests` ADD CONSTRAINT `tests_fk0` FOREIGN KEY (`teacher_id`) REFERE
 ALTER TABLE `tests` ADD CONSTRAINT `tests_fk1` FOREIGN KEY (`status_id`) REFERENCES `status`(`id`);
 
 ALTER TABLE `tests` ADD CONSTRAINT `tests_fk2` FOREIGN KEY (`class_id`) REFERENCES `classes`(`id`);
+
 
 ALTER TABLE `students` ADD CONSTRAINT `students_fk0` FOREIGN KEY (`test_id`) REFERENCES `tests`(`id`);
 
